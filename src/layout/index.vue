@@ -2,7 +2,7 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-07-04 09:49:02
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-04 17:08:39
+ * @LastEditTime: 2022-07-04 17:45:37
  * @FilePath: /vue-vite-element-admin/src/layout/index.vue
  * @Description: 项目框架
 -->
@@ -47,7 +47,11 @@ import Aside from '@/layout/components/Aside.vue'
     border-right: 1px solid rgb(227, 227, 227);
   }
   .el-main-customize-style {
-    padding: 0;
+    padding: 10px;
+  }
+  .global-style {
+    height: 100%;
+    box-shadow: 0 0 5px 3px rgb(235, 235, 235); // TODO 临时样式
   }
 }
 </style>

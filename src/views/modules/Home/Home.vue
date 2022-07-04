@@ -2,7 +2,7 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-07-04 15:03:37
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-04 15:03:45
+ * @LastEditTime: 2022-07-04 17:43:48
  * @FilePath: /vue-vite-element-admin/src/views/modules/Home/Home.vue
  * @Description: 首页
 -->
@@ -12,10 +12,8 @@ const state = reactive({})
 </script>
 
 <template>
-  <div class="home-container">
-    首页
-  </div>
+  <div class="global-style home-container">首页</div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="" scoped>
 </style>
