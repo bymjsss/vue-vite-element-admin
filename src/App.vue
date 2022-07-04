@@ -18,5 +18,6 @@ body {
 #app {
   height: 100vh;
   width: 100vw;
+  min-width: 1200px; // 最小宽度
 }
 </style>

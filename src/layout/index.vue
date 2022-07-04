@@ -2,7 +2,7 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-07-04 09:49:02
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-04 16:04:26
+ * @LastEditTime: 2022-07-04 17:08:39
  * @FilePath: /vue-vite-element-admin/src/layout/index.vue
  * @Description: 项目框架
 -->
@@ -37,6 +37,7 @@ import Aside from '@/layout/components/Aside.vue'
   background-color: #fff!important;
   .el-header-customize-style {
     height: 49px;
+    min-width: 1200px; // 最小宽度
     padding: 0;
     border-bottom: 1px solid rgb(227, 227, 227);
   }
