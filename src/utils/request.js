@@ -2,7 +2,7 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-06-30 16:22:24
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-04 16:51:01
+ * @LastEditTime: 2022-07-04 17:28:41
  * @FilePath: /vue-vite-element-admin/src/utils/request.js
  * @Description: axios
  */
@@ -11,28 +11,27 @@ import axios from "axios";
 import isPlainObject from 'lodash/isPlainObject'
 import qs from 'qs'
 import { ElMessage as Message } from 'element-plus'
-console.log('%c[MESSAGE]%cline:13%cMessage', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(3, 38, 58);padding:3px;border-radius:2px', Message)
 import router from '@/router/index'
 import debounce from 'lodash/debounce'
 
+const message = {
+  info: debounce(msg => {
+    Message.info(msg)
+  }, 500),
 
-const message = (type, msg) => {
+  warning: debounce(msg => {
+    Message.warning(msg)
+  }, 500),
 
+  error: debounce(msg => {
+    Message.error(msg)
+  }, 500),
+
+  success: debounce(msg => {
+    Message.success(msg)
+  }, 500)
 }
-// const message = {
-//   warning: debounce(function(msg) {
-//     Message.warning(msg);
-//   }, 500),
-//   error: debounce(function(msg) {
-//     Message.error(msg)
-//   }, 500),
-//   success: debounce(function(msg) {
-//     Message.success(msg)
-//   }, 500)
-// }
-setTimeout(() => {
-  Message('Oops, this is a error message.')
-}, 1000)
+
 const request = axios.create({
   baseURL: '',
   withCredentials: false, // 跨域是否需要凭证

@@ -6,7 +6,6 @@ import pinia from '@/store/index'
 import 'element-plus/theme-chalk/el-loading.css';
 import 'element-plus/theme-chalk/el-message.css';
 
-import '@/utils/request'
 const app = createApp(App);
 
 app.use(router)

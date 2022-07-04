@@ -2,17 +2,15 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-07-04 16:00:31
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-04 17:03:05
+ * @LastEditTime: 2022-07-04 17:31:31
  * @FilePath: /vue-vite-element-admin/src/layout/components/header.vue
  * @Description: top Header
 -->
 <script setup>
-import { reactive, ref, defineComponent } from 'vue'
-import { ElMessage } from 'element-plus'
+import { reactive, ref } from 'vue'
 
 const onNotice = () => {
-  ElMessage('this is a message.')
-  console.log('%c[MESSAGE]%cline:14%cElMessage', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(56, 13, 49);padding:3px;border-radius:2px', ElMessage)
+  ElMessage.success('this is a message.')
 }
 </script>
 
