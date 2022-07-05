@@ -2,7 +2,7 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-07-04 16:03:32
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-05 16:29:17
+ * @LastEditTime: 2022-07-05 18:11:22
  * @FilePath: \vue-vite-element-admin\src\layout\components\Aside.vue
  * @Description: 菜单栏
 -->
@@ -78,5 +78,8 @@ const menuList = [
 
 :deep(.el-menu) {
   border-right: 0px!important;
+}
+:deep(.is-active) {
+  background-color: #263445;
 }
 </style>
