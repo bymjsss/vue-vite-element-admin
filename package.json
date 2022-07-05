@@ -15,11 +15,13 @@
     "lodash": "^4.17.21",
     "pinia": "^2.0.14",
     "qs": "^6.11.0",
+    "vite-plugin-style-import": "^1.4.1",
     "vue": "^3.2.25",
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
+    "consola": "^2.15.3",
     "cross-env": "^7.0.3",
     "node-sass": "^7.0.1",
     "sass": "^1.53.0",

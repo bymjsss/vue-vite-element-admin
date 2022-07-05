@@ -1,24 +1,27 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { UserConfigExport, ConfigEnv, loadEnv } from "vite";
+import { loadEnv } from "vite"
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import path from 'path'
-const resolve = str => path.resolve(__dirname, str)
+import styleImport from "vite-plugin-style-import"
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const ENV = loadEnv(mode, __dirname)
   const IS_DEV = ENV.VITE_APP_ENV !== 'production'
   return {
-    base: './',
+    base: './', // 打包路径
+
     resolve: {
       alias: {
-        '@': resolve('src')
+        '@': resolve(__dirname, 'src')
       },
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
     },
+
+    // 打包配置
     build: {
       // 打包构建输出路径
 	    outDir: 'dist',
@@ -45,6 +48,18 @@ export default defineConfig(({ mode }) => {
         }
       }
     },
+
+    // css配置
+    css: {
+      // css预处理器
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "./src/styles/index.scss";' // 添加公共样式
+        }
+      }
+    },
+
+    // 插件
     plugins: [
       vue(),
       AutoImport({
@@ -53,6 +68,21 @@ export default defineConfig(({ mode }) => {
       Components({
         resolvers: [ElementPlusResolver()],
       }),
+      styleImport({
+        libs: [
+          { // 按需引入ele css 文件
+            libraryName: "element-plus",
+            esModule: true,
+            ensureStyleFile: true,
+            resolveStyle: (name) => {
+              return `element-plus/lib/theme-chalk/${name}.css`;
+            },
+            resolveComponent: (name) => {
+              return `element-plus/lib/${name}`;
+            }
+          }
+        ]
+      })
     ]
   }
 })
