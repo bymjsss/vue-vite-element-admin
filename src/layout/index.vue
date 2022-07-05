@@ -2,8 +2,8 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-07-04 09:49:02
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-04 17:45:37
- * @FilePath: /vue-vite-element-admin/src/layout/index.vue
+ * @LastEditTime: 2022-07-05 15:09:01
+ * @FilePath: \vue-vite-element-admin\src\layout\index.vue
  * @Description: 项目框架
 -->
 
@@ -15,13 +15,13 @@ import Aside from '@/layout/components/Aside.vue'
 <template>
   <div class="layout-container">
     <el-container>
-      <el-header class="el-header-customize-style">
-        <Header />
-      </el-header>
+      <el-aside width="300px" class="el-aside-customize-style">
+        <Aside />
+      </el-aside>
       <el-container>
-        <el-aside width="300px" class="el-aside-customize-style">
-          <Aside />
-        </el-aside>
+        <el-header class="el-header-customize-style">
+          <Header />
+        </el-header>
         <el-main class="el-main-customize-style">
           <router-view></router-view>
         </el-main>
@@ -33,25 +33,37 @@ import Aside from '@/layout/components/Aside.vue'
 <style lang="scss" scoped>
 .layout-container {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #fff!important;
-  .el-header-customize-style {
-    height: 49px;
-    min-width: 1200px; // 最小宽度
-    padding: 0;
-    border-bottom: 1px solid rgb(227, 227, 227);
-  }
+
   .el-aside-customize-style {
-    height: calc(100vh - 50px);
+    border-right: 1px solid rgb(235, 235, 235);
+    height: 100vh;
+  }
+
+  .el-header-customize-style {
+    height: 81px;
     padding: 0;
-    border-right: 1px solid rgb(227, 227, 227);
+    min-width: calc($min_width - 300px); // 最小宽度
   }
+
   .el-main-customize-style {
-    padding: 10px;
-  }
-  .global-style {
-    height: 100%;
-    box-shadow: 0 0 5px 3px rgb(235, 235, 235); // TODO 临时样式
+    padding: 0;
+    min-width: calc($min_width - 300px); // 最小宽度
+    background-color: #f0f2f5;
+
+    .task-bar {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      border: 1px solid rgb(235, 235, 235);
+    }
+
+    .global-style {
+      width: 100%;
+      height: calc(100% - 42px);
+    }
   }
 }
 </style>
