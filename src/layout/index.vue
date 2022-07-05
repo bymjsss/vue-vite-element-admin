@@ -2,7 +2,7 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-07-04 09:49:02
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-05 15:09:01
+ * @LastEditTime: 2022-07-05 16:40:00
  * @FilePath: \vue-vite-element-admin\src\layout\index.vue
  * @Description: 项目框架
 -->
@@ -42,8 +42,8 @@ import Aside from '@/layout/components/Aside.vue'
   }
 
   .el-header-customize-style {
-    height: 81px;
     padding: 0;
+    height: auto;
     min-width: calc($min_width - 300px); // 最小宽度
   }
 
