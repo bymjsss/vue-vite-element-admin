@@ -1,7 +1,7 @@
 
 
 <template>
-  <div id="app">
+  <div id="app-entrance">
   <!-- <el-config-provider :locale="currentLocale"> -->
     <router-view v-slot="{ Component }">
       <component :is="Component" />
@@ -15,7 +15,7 @@ body {
   padding: 0;
   margin: 0;
 }
-#app {
+#app-entrance {
   height: 100vh;
   width: 100vw;
   min-width: 1200px; // 最小宽度
