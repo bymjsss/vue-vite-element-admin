@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "server": "vite",
-    "server:prod": "vite --mode development.production",
-    "build": "vite build",
+    "serve": "vite --mode development",
+    "serve:prod": "vite --mode production",
+    "build": "vite build --mode production",
+    "build:dev": "vite build --mode development",
     "preview": "vite preview"
   },
   "dependencies": {
