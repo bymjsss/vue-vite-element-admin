@@ -2,7 +2,7 @@
  * @Author: yongming.bai(git: 花裤衩)
  * @Date: 2022-06-30 16:22:24
  * @LastEditors: yongming.bai(git: 花裤衩)
- * @LastEditTime: 2022-07-04 17:28:41
+ * @LastEditTime: 2022-07-07 09:00:25
  * @FilePath: /vue-vite-element-admin/src/utils/request.js
  * @Description: axios
  */
@@ -33,7 +33,7 @@ const message = {
 }
 
 const request = axios.create({
-  baseURL: '',
+  baseURL: import.meta.env.VIE_APP_BASE_URL,
   withCredentials: false, // 跨域是否需要凭证
 })
 
